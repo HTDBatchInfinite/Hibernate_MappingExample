@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC 
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/cricket</property>
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">root</property>
+		<property name="hibernate.connection.pool_size">10</property>
+		<property name="format_sql">true</property>
+		<property name="use_sql_comments">true</property>
+		<property name="show_sql">true</property>
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.hbm2ddl.auto">creates</property>
+		<mapping resource="team.hbm.xml" /> 
+		<mapping resource="player.hbm.xml" /> 
+		<mapping resource="bord.hbm.xml" /> 
+		<mapping resource="address.hbm.xml"/>
+		<!-- <mapping resource="employee.hbm.xml" /> 
+		<mapping resource="department.hbm.xml"/> 
+		<mapping resource="student.hbm.xml" /> 
+		<mapping resource="inheritanceemployee.hbm.xml"/> 
+		<mapping resource="subclassenployee.hbm.xml" /> 
+		<mapping resource="TableForConcretClass.hbm.xml"/> 
+		<mapping resource="person.hbm.xml" /> 
+		<mapping resource="productver.hbm.xml"/>
+		<mapping resource="user.hbm.xml" /> 
+		<mapping resource="order.hbm.xml"/> 
+		<mapping resource="onetooneproduct.hbm.xml"/> 
+		<mapping resource="productdetails.hbm.xml"/> 
+		<mapping resource="Cri_employee.hbm.xml"/> 
+	    <mapping resource="Bank.hbm.xml"/> 
+	    <mapping resource="customer.hbm.xml"/> 
+		<mapping resource="uni_student.hbm.xml"/>
+		 <mapping resource="university.hbm.xml"/>
+		<mapping resource="book.hbm.xml" />  -->
+	</session-factory>
+</hibernate-configuration>

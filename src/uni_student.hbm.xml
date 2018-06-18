@@ -1,0 +1,21 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.infinite.hibernate.JoinusingCriteria">
+	<!-- class name is Uni_Student -->
+	<class name="Uni_Student" table="Uni_Student_Table">
+
+		<!-- id is Increment -->
+		<id name="student_Id" column="Student_Id" type="int" length="20">
+			<generator class="increment"></generator>
+		</id>
+		<!-- Uni_student properties -->
+		<property name="student_Name" column="Student_Name" type="string"
+			length="20"></property>
+		<property name="student_Address" column="Student_Address"
+			type="string" length="20"></property>
+		<property name="student_Ph" column="Student_Phone" type="int"
+			length="20"></property>
+	</class>
+</hibernate-mapping>

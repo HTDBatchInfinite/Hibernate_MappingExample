@@ -1,0 +1,27 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- Package is Criteria -->
+<hibernate-mapping package="com.infinite.hibernate.criteria">
+
+	<!-- Class is Cri_Employee -->
+	<class name="Cri_Employee" table="Cri_Employee_table">
+
+		<!-- id is increment -->
+		<id name="employeeId" column="Employee_Id" type="int" length="20">
+			<generator class="increment"></generator>
+		</id>
+
+		<!-- cri_Employee Properties -->
+
+		<property name="employeeName" column="Employee_Name" type="string"
+			length="20"></property>
+
+		<property name="employeeDept" column="Employee_Dept" type="string"
+			length="20"></property>
+
+		<property name="employeeSalary" column="Employee_Salary"
+			type="int" length="20"></property>
+	</class>
+</hibernate-mapping>

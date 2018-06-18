@@ -1,0 +1,16 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.infinite.hibernate.pojo.Address" table="Address_table">
+		<id name="id" column="Address_ID" type="int" length="20">
+			<generator class="increment"></generator>
+		</id>
+		
+		<property name="state" column="State" type="string" length="20"></property>
+		<property name="country" column="Country" type="string"
+			length="20"></property>
+		<property name="pin" column="Pin" type="int" length="20"></property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<!--Class Name -->
+	<class name="com.infinite.hibernate.Component.Student" table="Student_table">
+		<!--id is Increment -->
+		<id name="studentId" column="STUDENT_ID" type="int" length="20">
+			<generator class="increment"></generator>
+		</id>
+		<!-- Student properties -->
+		<property name="studentName" column="STUDENT_NMAE" type="string"
+			length="20"></property>
+		<property name="studentAge" column="STUDENT_AGE" type="int"
+			length="20"></property>
+		<property name="studentCollege" column="STUDENT_COLLAGE"
+			type="string" length="20"></property>
+		<property name="studentDepartment" column="STUDENT_DEPT"
+			type="string" length="20"></property>
+
+		<!--Component tag -->
+		<component name="address" class="com.infinite.hibernate.Component.StudentAddress">
+	<!-- Address properties -->
+			<property name="Country" column="COUNTRY" type="string"
+				length="20"></property>
+			<property name="State" column="STATE" type="string" length="20"></property>
+			<property name="city" column="CITY" type="string" length="20"></property>
+			<property name="Pine" column="PINE" type="int" length="20"></property>
+		</component>
+	</class>
+
+</hibernate-mapping>

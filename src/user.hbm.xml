@@ -1,0 +1,20 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<!-- Class is USER -->
+	<class name="com.infinite.hibernate.timerstamp.User" table="USER_TABLE" optimistic-lock="version">
+		<!-- Id is Increment -->
+		<id name="userId" column="USER_ID" type="int" length="20">
+			<generator class="increment"></generator>
+		</id>
+		<!-- TIMER STAMP -->
+		<timestamp name="LastModifyedBy" column="LASTMODIFYEDBY" />
+
+		<!-- USER PROPERTIES -->
+		<property name="userName" column="USER_NAME" type="string"
+			length="20" />
+		<property name="userAddress" column="USER_ADDRESS" type="string"
+			length="20" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.infinite.hibernate.thirdTable">
+	<!-- class name is Bank -->
+	<class name="Bank" table="Bank_table">
+		<!-- id is Increment -->
+		<id name="bank_Id" column="BANK_ID" type="int" length="20">
+			<generator class="increment"></generator>
+		</id>
+		<!-- Bank properties -->
+		<property name="bank_Name" column="BANK_NAME" type="string"
+			length="20"></property>
+		<!-- One to Many -->
+		<list name="customers" cascade="all" table="Bank_Customer">
+			<key column="BANK_ID"></key>
+			<index type="type"></index>
+			<many-to-many class="Customer" column="Customer_Id" />
+		</list>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.infinite.hibernate.one_to_one.primarykey">
+	<class name="ProductDetail" table="Detail_table">
+		<id name="productId" column="ProductDetails_id" type="int" length="20">
+			<generator class="foreign">
+				<param name="property"></param>
+			</generator>
+		</id>
+		<property name="address" column="ProductDetails_Address"
+			type="string" length="20"></property>
+	</class>
+</hibernate-mapping>;

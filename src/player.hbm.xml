@@ -1,0 +1,30 @@
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	<!-- class -->
+	<class name="com.infinite.hibernate.pojo.Player" table="Player_table">
+
+		<!-- Id -->
+
+		<id name="playerId" type="int" column="Player_Id" length="20">
+			<generator class="increment"></generator>
+		</id>
+		<!-- properties -->
+
+		<property name="playerName" column="Player_name" type="string"
+			length="20"></property>
+		<property name="playerScore" column="Player_Score" type="int"
+			length="20"></property>
+		<property name="playerAvarage" column="Player_Avarage" type="int"
+			length="20"></property>
+		<property name="playerWickets" column="Player_Wickets" type="int"
+			length="20"></property>
+		<!-- one-to-one -->
+		<many-to-one name="address" class="com.infinite.hibernate.pojo.Address"
+			column="Address_id" fetch="select" cascade="all" />
+	</class>
+</hibernate-mapping>

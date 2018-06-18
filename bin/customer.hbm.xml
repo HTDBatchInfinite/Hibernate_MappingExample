@@ -1,0 +1,23 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.infinite.hibernate.thirdTable">
+	<!-- Class is Customer -->
+	<class name="Customer" table="Customer_Table">
+		<!-- id is Increment -->
+		<id name="customer_Id" column="CUSTOMER_ID" type="int" length="20">
+			<generator class="increment"></generator>
+		</id>
+		<!-- Customer Properties -->
+		<property name="customer_Name" column="Customer_NAME" type="string"
+			length="20"></property>
+		<property name="customer_AccNo" column="Customer_AccNo" type="int"
+			length="20"></property>
+		<property name="customer_Ph" column="Customer_Ph" type="int"
+			length="20"></property>
+		<join table="Bank_Customer" inverse="true">
+			<key column="Customer_Id"></key>
+		</join>
+	</class>
+</hibernate-mapping>

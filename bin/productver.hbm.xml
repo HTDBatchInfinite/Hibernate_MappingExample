@@ -1,0 +1,24 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<!-- Class is Product -->
+	<class name="com.infinite.hibernate.Versioning.Product" table="PRODUCT_table" optimistic-lock="version">
+		<!-- id is Increment -->
+		<id name="productId" column="PRODUCT_Id" type="int" length="20">
+			<generator class="increment"></generator>
+		</id>
+		<!--Versioning -->
+		<version name="ver" column="VERSION_ID" />
+
+		<!-- Product Properties -->
+		<property name="productName" column="PRODUCT_NAME" type="string"
+			length="20" />
+
+		<property name="productPrice" column="PRODUCT_PRICE" type="int"
+			length="20" />
+
+	</class>
+
+</hibernate-mapping>

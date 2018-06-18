@@ -1,0 +1,29 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<!-- class -->
+	<class name="com.infinite.hibernate.pojo.Team" table="Team_Table">
+		<!-- Id -->
+		
+		<id name="teamNo" type="int" column="Team_No" length="20">
+			<generator class="increment"></generator>
+		</id>
+
+		<!-- properties -->
+		<property name="teamName" type="string" column="Team_Name"
+			length="20"></property>
+
+		<!--one to many -->
+		<list name="players" cascade="all">
+		<key column="Player_Fk"></key>
+		<index type="type"></index>
+		<one-to-many class="com.infinite.hibernate.pojo.Player"/>
+		
+		</list>
+		<!-- one to one -->
+		 <many-to-one name="bord" class="com.infinite.hibernate.pojo.Bord" column="Bord_id" fetch="select" cascade="all"/>
+
+	</class>
+</hibernate-mapping>

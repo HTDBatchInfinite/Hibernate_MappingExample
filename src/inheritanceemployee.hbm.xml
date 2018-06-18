@@ -1,0 +1,40 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<!--class Name is Employee -->
+	<class name="com.infinite.hibernate.inheritance.EmployeeInheritance"
+		table="EmployeeInheritance_table" discriminator-value="emp">
+		<!-- id is increment -->
+		<id name="EmployeeId" column="EMPLOYEE_ID" type="int" length="20">
+			<generator class="increment"></generator>
+		</id>
+		<!-- Discriminator type is String -->
+		<discriminator column="DISCRIMINATOR" type="string" />
+		<!-- Employee properties -->
+		<property name="EmployeeName" column="EMPLOYEE_NAME" type="string"
+			length="20"></property>
+		<property name="EmployeeAge" column="Employee_AGE" type="int"
+			length="20"></property>
+		<!-- REG EMPLOYEE -->
+		<subclass name="com.infinite.hibernate.inheritance.RegularEmployee"
+			discriminator-value="regemp">
+			<!--reg Employee Properties -->
+			<property name="Salary" column="REG_EMPLOYEE_SALARY" type="int"
+				length="20">
+			</property>
+			<property name="Bonus" column="REG_EMPLOYEE_BOUNUS" type="int"
+				length="20">
+			</property>
+		</subclass>
+		<!-- Contract Employee -->
+		<subclass name="com.infinite.hibernate.inheritance.ContractEmployee"
+			discriminator-value="conemp">
+			<!--CONTRACT EMPLOYEE PROPERTIES -->
+			<property name="Pay_for_hour" column="CON_EMPLOYEE_PAY_FOR_HOUR"
+				type="int" length="20"></property>
+			<property name="TimePeriode" column="CONE_MPLOYEE_TIMEPERIODE"
+				type="int" length="20"></property>
+		</subclass>
+	</class>
+</hibernate-mapping>

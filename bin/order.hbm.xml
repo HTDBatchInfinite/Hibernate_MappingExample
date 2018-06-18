@@ -1,0 +1,18 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<!-- Class name is Order -->
+	<class name="com.infinite.hibernate.merge.Order" table="ORDER_TABLE">
+		<!-- Id is increment -->
+		<id name="orderId" column="ORDER_ID" type="int" length="20">
+			<generator class="increment"></generator>
+		</id>
+		<!-- Order Properties -->
+		<property name="orderName" column="ORDER_NAME" type="string"
+			length="20"></property>
+		<property name="orderCost" column="ORDER_COST" type="int"
+			length="20"></property>
+	</class>
+</hibernate-mapping>

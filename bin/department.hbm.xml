@@ -1,0 +1,23 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<!-- Class Department -->
+	<class name="com.infinite.hibernate.bidirection.Department"
+		table="DEPARTMENT_TABLE">
+		<!-- id is Increment -->
+		<id name="departmentId" column="DEPARTMENT_ID" type="int" length="20">
+			<generator class="increment"></generator>
+		</id>
+		<!-- Department properties -->
+		<property name="departmentName" column="DEPARTMENT_NAME"
+			type="string" length="20"></property>
+		<!-- one to many relation -->
+		<list name="employees" cascade="all" inverse="true" table="Emp_table">
+			<key column="EMPLOYEE_FK"></key>
+			<index type="INDEX_ID"></index>
+			<one-to-many class="com.infinite.hibernate.bidirection.Employee"></one-to-many>
+		</list>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,20 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<!-- Class is person -->
+	<class name="com.infinite.hibernate.test.Person" table="PERSON_TABLE">
+		<!-- id is Increment -->
+		<id name="personId" column="PERSON_ID" type="int" length="20">
+			<!-- <generator class="increment"></generator> -->
+		</id>
+		<!-- Person Properties -->
+		<property name="personName" column="PERSON_NAME" type="string"
+			length="20"></property>
+		<property name="personAge" column="PERSON_AGE" type="int"
+			length="20"></property>
+		<!-- versioning -->
+		<!-- <version name="v" column="VER"/> -->
+	</class>
+</hibernate-mapping>

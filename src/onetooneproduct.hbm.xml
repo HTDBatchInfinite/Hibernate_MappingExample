@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.infinite.hibernate.one_to_one.primarykey">
+	<class name="Product1" table="ProductOne_table">
+		<id name="id" column="Product_ID" type="int" length="20">
+			<generator class="increment"></generator>
+		</id>
+		<property name="pname" column="Product_name" type="string"
+			length="20"></property>
+		<property name="price" column="Product_Price" type="float"
+			length="20"></property>
+		<one-to-one name="productDetail" class="ProductDetail"
+			cascade="all" constrained="true"></one-to-one>
+	</class>
+</hibernate-mapping>
